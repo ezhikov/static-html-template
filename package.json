@@ -1,0 +1,19 @@
+{
+  "name": "project",
+  "version": "0.0.0",
+  "private": true,
+  "devDependencies": {
+    "nunjucks": "^3.2.0",
+    "parcel-bundler": "^1.12.3",
+    "parcel-plugin-imagemin": "^3.0.0",
+    "parcel-plugin-nunjucks": "^2.1.1",
+    "sass": "^1.23.0-module.beta.1"
+  },
+  "scripts": {
+    "start": "parcel src/pages/index.njk --open",
+    "build": "parcel build src/pages/index.njk"
+  },
+  "dependencies": {
+    "reset-css": "^4.0.1"
+  }
+}

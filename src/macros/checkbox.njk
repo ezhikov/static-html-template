@@ -1,0 +1,9 @@
+{# Separate configurable repeatable parts into separate macros. #}
+{# Either keep one by single file, or group by purpose e.g. form controls #}
+
+{% macro checkbox(name, value, label='', checkedDefault=false) %}
+<label>
+  <input type="checkbox" name="{{name}}"{% if checkedDefault %} checked{% endif%} />
+  {{label}}
+</label>
+{% endmacro %}
