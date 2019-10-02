@@ -11,7 +11,7 @@
   },
   "scripts": {
     "start": "parcel src/pages/index.njk --open",
-    "build": "parcel build src/pages/index.njk"
+    "build": "parcel build src/pages/index.njk --no-content-hash --no-minify --public-url ./"
   },
   "dependencies": {
     "reset-css": "^4.0.1"
