@@ -1,4 +1,7 @@
+{% from "../macros/checkbox.njk" import checkbox %}
+
 <section>
 <h2>Macros</h2>
 <p>Put macros into separate folder (<code>src/macros</code>). Group macros by purpose it if feels convenient.</p>
+<p>Here is example of macro usage: {{ checkbox("understand_macros", 1, "I do understand how to use macros") }}
 </section>

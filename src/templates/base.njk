@@ -5,18 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title%}{% endblock %}</title>
-    {% block styles%}
-    {# Place common styles here #}
     <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css">
-    {% endblock %}
-</head>
+</head> 
 <body>
     {# Do not place content here, but you can define common parts outside of content if needed #}
     {% block content %}{% endblock%}
-
-    {# Keep scripts at the bottom #}
-    {% block scripts %}
-    {# Place common scripts here #}
-    {% endblock %}
 </body>
 </html>
