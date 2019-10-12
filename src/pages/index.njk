@@ -1,18 +1,8 @@
 {% extends "../templates/base.njk" %}
-
-{% block styles%}
-    {{ super() }}
-    {# Place page specific styles here #}
-{% endblock%}
-
-{% block scripts%}
-    {{ super() }}
-    {# Place page specific scripts here #}
-{% endblock%}
-
+ 
 {% block content %}
     {# Place page content here #}
-    <h1>Hello, world</h1>
+    <h1>Hello, Friend</h1>
     {% include "../partials/about-templates.njk" %}
     {% include "../partials/about-partials.njk" %}
     {% include "../partials/about-macros.njk" %}
@@ -20,3 +10,4 @@
     {% include "../partials/about-assets.njk" %}
     {% include "../partials/about-styles.njk" %}
 {% endblock %}
+
