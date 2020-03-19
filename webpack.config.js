@@ -15,12 +15,13 @@ module.exports = function(env) {
   return {
     mode: env.production ? "production" : "development",
     entry: [
-      path.resolve(__dirname, "src/js/main.js"),
-      path.resolve(__dirname, "src/styles/main.scss")
+      path.resolve(__dirname, "src/js/scripts.js"),
+      require.resolve("reset-css/sass/_reset.scss"),
+      path.resolve(__dirname, "src/styles/styles.scss")
     ],
     output: {
       path: path.resolve(__dirname, "dist/"),
-      publicPath: env.production && "./",
+      publicPath: env.production ? "./" : "/",
       filename: "js/[name].js"
     },
     module: {
@@ -97,6 +98,7 @@ module.exports = function(env) {
                 {
                   loader: require.resolve("sass-loader"),
                   options: {
+                    implementation: require("sass"),
                     sourceMap: true
                   }
                 }
@@ -106,7 +108,8 @@ module.exports = function(env) {
               loader: "file-loader",
               exclude: [/\.(js|mjs|jsx|ts|tsx)$/, /\.html$/, /\.json$/],
               options: {
-                name: "assets/[name].[ext]"
+                outputPath: "assets",
+                name: "[name].[ext]"
               }
             }
           ]
@@ -118,12 +121,13 @@ module.exports = function(env) {
         .map(page => {
           return new HtmlPlugin({
             inject: true,
-            template: path.join(pagesPath, page)
+            template: path.join(pagesPath, page),
+            filename: page.replace("njk", "html")
           });
         })
         .concat([
           new MiniCssExtractPlugin({
-            filename: "styles/[name].css"
+            filename: "styles/styles.css"
           })
           // env.development && new webpack.HotModuleReplacementPlugin()
         ])
