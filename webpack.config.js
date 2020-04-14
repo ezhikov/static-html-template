@@ -15,9 +15,8 @@ module.exports = function(env) {
   return {
     mode: env.production ? "production" : "development",
     entry: [
-      path.resolve(__dirname, "src/js/scripts.js"),
-      require.resolve("reset-css/sass/_reset.scss"),
-      path.resolve(__dirname, "src/styles/styles.scss")
+      path.resolve(__dirname, "src/js/main.js"),
+      path.resolve(__dirname, "src/styles/main.scss")
     ],
     output: {
       path: path.resolve(__dirname, "dist/"),
@@ -61,7 +60,7 @@ module.exports = function(env) {
                     presets: [
                       [
                         "@babel/preset-env",
-                        { modules: "false", useBuiltIns: "usage", corejs: 3 }
+                        { modules: false, useBuiltIns: "usage", corejs: 3 }
                       ]
                     ]
                   }
